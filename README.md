@@ -8,5 +8,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 # 学习vue3+vite 
  
-## 使用vite构建vue3项目
+## 使用vite构建vue3项目 yarn create vite my-vue-app --template vue
 
+
+## 启动 yarn dev
