@@ -3,11 +3,12 @@ import { ref,reactive,computed,defineProps, toRefs,onMounted } from 'vue'
 defineProps({
   msg:String
 })
-const root = ref(null);
-// DOM首次渲染完成之后，才能获取到真实DOM
-onMounted(()=>{
-  console.log("熊",root.value);
-})
+
+// const root = ref(null);
+// // DOM首次渲染完成之后，才能获取到真实DOM
+// onMounted(()=>{
+//   console.log("熊",root.value);
+// })
 // ref是一般某个元素 简单数据类型 reactive对象
 // const count = ref(0);
 // console.log('count',count.value);
