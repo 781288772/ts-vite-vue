@@ -3,6 +3,11 @@ import { ref,reactive,computed,defineProps, toRefs,onMounted } from 'vue'
 defineProps({
   msg:String
 })
+const count = ref(1);
+console.log(count.value);
+// 返回一个readonly
+const plusOne = computed(()=>count.value + 1)
+console.log(plusOne.value);
 
 // const root = ref(null);
 // // DOM首次渲染完成之后，才能获取到真实DOM
@@ -43,6 +48,8 @@ defineProps({
  <button @click="increment">add</button> -->
  <div>
    <h1>msg</h1>
+   <p>{{count}}</p>
+   <p>{{plusOne}}</p>
    <input type="text" ref="root" value="ref使用例子">
    <!-- {{count}}
    <h1>{{obj.dd}}</h1>
