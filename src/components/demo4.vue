@@ -1,40 +1,13 @@
-<template>
- <!-- <div>默认的count:{{state.count}}</div>
- <div>double:{{state.double}}</div>
- <button @click="increment">add</button> -->
- <div>
-   <h1>msg</h1>
-   <p>{{state.count}}</p>
-   <input type="text" ref="root" value="ref使用例子">
-   <!-- {{count}}
-   <h1>{{obj.dd}}</h1>
-   <h6>toRefs解构reactive:{{dd}}</h6>
-    <h2>{{obj.address}}</h2> -->
- </div>
-</template>
-
-
 <script setup lang="ts">
-import { watch,ref,reactive,computed,defineProps, toRefs,onMounted } from 'vue'
+import { ref,reactive,computed,defineProps, toRefs,onMounted } from 'vue'
 defineProps({
   msg:String
 })
-const state = reactive({count:0});
-watch(()=>state.count,(count,prevCount)=>{
-  console.log("第一个监听的值",count,prevCount);
-},{
-  deep:true,
-  immediate:true
-})
-
-setTimeout(() => {
-  state.count++;
-}, 1000);
-// const count = ref(1);
-// console.log(count.value);
-// // 返回一个readonly
-// const plusOne = computed(()=>count.value + 1)
-// console.log(plusOne.value);
+const count = ref(1);
+console.log(count.value);
+// 返回一个readonly
+const plusOne = computed(()=>count.value + 1)
+console.log(plusOne.value);
 
 // const root = ref(null);
 // // DOM首次渲染完成之后，才能获取到真实DOM
@@ -69,7 +42,21 @@ setTimeout(() => {
 // }
 </script>
 
-
+<template>
+ <!-- <div>默认的count:{{state.count}}</div>
+ <div>double:{{state.double}}</div>
+ <button @click="increment">add</button> -->
+ <div>
+   <h1>msg</h1>
+   <p>{{count}}</p>
+   <p>{{plusOne}}</p>
+   <input type="text" ref="root" value="ref使用例子">
+   <!-- {{count}}
+   <h1>{{obj.dd}}</h1>
+   <h6>toRefs解构reactive:{{dd}}</h6>
+    <h2>{{obj.address}}</h2> -->
+ </div>
+</template>
 
 <style scoped>
 a {
