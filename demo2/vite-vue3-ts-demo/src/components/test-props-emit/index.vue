@@ -1,6 +1,6 @@
 <template>
 <p>{{props.msg}}</p>
-<button @click="handleClick">click me to call the parent commonentmethod</button>
+<button @click="handleClick">click me to call the parent commonent's method</button>
 </template>
 
 
@@ -14,6 +14,13 @@ const props = defineProps({
 })
 const emit = defineEmits(['on-cnahge'])
  const handleClick = ()=>{
-        emit('on-change',"parent component's method was called ")
+        emit("on-change","parent component's method was called ")
     }
+    const childNode = ()=>{
+        console.log("child's method was call")
+    }
+    defineExpose({
+        child:'exposed child component',
+        childNode
+    })
 </script>
