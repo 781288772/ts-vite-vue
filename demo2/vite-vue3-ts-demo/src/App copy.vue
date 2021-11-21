@@ -1,17 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import TestPropsEmit from "./components/test-props-emit/index.vue"
-import {ref} from "vue";
-
-const msg = ref('welcome to study vite')
-const handleChange = (params:string)=>{
-  console.log('pro')
-}
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <test-props-emit :msg="msg" @on-change="handleChange" ></test-props-emit>   
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
 <style>
