@@ -2,6 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import TestPropsEmit from "./components/test-props-emit/index.vue"
+import TsSample from './components/ts-sample/index.vue'
 import {ref,onMounted} from "vue";
 
 const msg = ref('welcome to study vite')
@@ -13,10 +14,14 @@ const propsEmitRef = ref();
 onMounted(()=>{
   console.log(propsEmitRef.value.child,propsEmitRef.value.childNode())
 })
+const onUpdate = (data:any)=>{
+  console.log(data);
+}
 </script>
 
 <template>
   <test-props-emit  ref="propsEmitRef" :msg="msg" @on-change="handleChange" ></test-props-emit>   
+  <TsSample :msg="'ts-sample'" @on-update="onUpdate"></TsSample>
 </template>
 <!--  -->
 <style>
