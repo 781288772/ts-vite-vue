@@ -9,11 +9,12 @@ const msg = ref('welcome to study vite')
 const handleChange = (params:string)=>{
   console.log(params)
 }
-
+// 定义获取子组件属性的变量
 const propsEmitRef = ref();
 onMounted(()=>{
   console.log(propsEmitRef.value.child,propsEmitRef.value.childNode())
 })
+// 子组件传参的回调函数
 const onUpdate = (data:any)=>{
   console.log(data);
 }
