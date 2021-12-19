@@ -33,7 +33,7 @@ const test1 = (params:(string|boolean))=>{
 
 <template>
   <test-props-emit  ref="propsEmitRef" :msg="msg" @on-change="handleChange" ></test-props-emit>   
-  <TsSample :msg="'ts-sample'" @on-update="onUpdate"></TsSample>
+  <TsSample  @on-update="onUpdate"></TsSample>
 </template>
 <!--  -->
 <style>
