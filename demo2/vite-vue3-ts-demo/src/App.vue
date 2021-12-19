@@ -18,6 +18,17 @@ onMounted(()=>{
 const onUpdate = (data:any)=>{
   console.log(data);
 }
+
+// ts限制函数参数类型
+
+function test(params:(string|boolean)){
+    console.log(params);
+}
+
+const test1 = (params:(string|boolean))=>{
+    console.log(params);
+}
+
 </script>
 
 <template>
